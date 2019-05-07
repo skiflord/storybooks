@@ -1,0 +1,27 @@
+<div>
+    <div style="position: absolute; top:0.3em; z-index: 10; margin-left: 45%">
+      <img class="ui small image" src="https://cure4thekids.org/wp-content/uploads/2018/12/Storybook-Homes-Long-Term-Followup-Clinic-Logo-transparent-846x406.png">
+    </div>
+  <div class="ui borderless main menu fixed" style="padding: 1em; position: relative; z-index: 5;">
+    {{#if user}}
+      <a class="item" href="/dashboard">Dashboard</a>
+      <a class="item" href="/stories/add">New Story</a>
+    {{else}}
+    <a class="item" href="/stories">Public Stories</a>
+    {{/if}}
+    <div class="right menu">
+      {{#if user}}
+      <a class="ui item" href="/auth/logout">
+        Logout
+      </a>
+      {{else}}
+      <a class="ui item" href="/auth/google">
+        Sign in
+      </a>
+      <a class="ui item" href="/auth/google">
+        Sign up
+      </a>
+      {{/if}}
+    </div>
+  </div>
+</div>
