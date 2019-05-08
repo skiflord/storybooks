@@ -1,1 +1,25 @@
-<h1>Index Story</h1>
+<div class="ui four cards container" style="margin: 1em">
+  {{#each stories}}
+    <a href="/stories/show/{{id}}" class="ui card">
+      <div class="content">
+        <div class="header">{{title}}</div>
+        <div class="meta">
+          <span class="category">{{status}}</span>
+        </div>
+        <div class="description">
+          <p>{{{body}}}</p>
+        </div>
+      </div>
+      <div class="extra content">
+        <div  class="left floated ui icon button">
+          <i class="pencil alternate icon "></i>
+        </div>
+        <div class="right floated author">
+          <img src={{user.image}} class="ui avatar image"> {{user.firstName}} {{user.lastName}}
+        </div>
+      </div>
+    </a>
+  {{else}}
+    <p>No stories found</p>
+  {{/each}}  
+</div>

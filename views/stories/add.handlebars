@@ -1,15 +1,15 @@
 <div class="ui horizontal divider">Tell Us Your New Story</div>
-<form class="ui form segment" style="margin: 0em 1em 1em">
+<form class="ui form segment" action="/stories" method="post" style="margin: 0em 1em 1em">
   <p>Tell Us Your Story</p>
   <div>
     <div class="field">
       <label>Title</label>
-      <input placeholder="Name" name="name" type="text">
+      <input placeholder="Title" name="title" type="text">
     </div>
     <div class="field">
       <label>Status</label>
       <select class="ui dropdown" name="status">
-        <option value="public">Public</option>
+        <option value="public" selected>Public</option>
         <option value="private">Private</option>
         <option value="unpublished">Unpublished</option>
       </select>
@@ -21,6 +21,7 @@
       </div>
     </div>
     <div class="field">
+      <label>Content</label>
       <textarea name="content" id="editor"></textarea>
     </div>
     <div class="ui primary submit button">Save</div>
