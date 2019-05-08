@@ -1,1 +1,29 @@
-<h1>Add Story</h1>
+<div class="ui horizontal divider">Tell Us Your New Story</div>
+<form class="ui form segment" style="margin: 0em 1em 1em">
+  <p>Tell Us Your Story</p>
+  <div>
+    <div class="field">
+      <label>Title</label>
+      <input placeholder="Name" name="name" type="text">
+    </div>
+    <div class="field">
+      <label>Status</label>
+      <select class="ui dropdown" name="status">
+        <option value="public">Public</option>
+        <option value="private">Private</option>
+        <option value="unpublished">Unpublished</option>
+      </select>
+    </div>
+    <div class="inline field">
+      <div class="ui checkbox">
+        <input type="checkbox" name="allowComments" checked="checked">
+        <label>Allow comments</label>
+      </div>
+    </div>
+    <div class="field">
+      <textarea name="content" id="editor"></textarea>
+    </div>
+    <div class="ui primary submit button">Save</div>
+    <div class="ui error message"></div>
+  </div>
+</form>
