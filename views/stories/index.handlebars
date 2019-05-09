@@ -1,13 +1,13 @@
-<div class="ui four cards container" style="margin: 1em">
+<div class="ui stackable four column grid story container">
   {{#each stories}}
-    <a href="/stories/show/{{id}}" class="ui card">
+    <a href="/stories/show/{{id}}" class="ui card story card">
       <div class="content">
         <div class="header">{{title}}</div>
         <div class="meta">
           <span class="category">{{status}}</span>
         </div>
         <div class="description">
-          <p>{{{body}}}</p>
+          <p>{{{truncate body 150}}}</p>
         </div>
       </div>
       <div class="extra content">

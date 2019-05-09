@@ -1,1 +1,45 @@
-<h1>Show Story</h1>
+
+  <div class="ui stackable grid center vertical aligned container"  style="margin: 4em 0em 2em">
+    <div class="row">
+      <div class="sixteen wide column">
+        <div class="ui header">
+          <h1>{{story.title}}</h1>
+        </div>
+        <div class="meta">
+          <span class="date">{{formateDate story.date 'MMMM Do YYYY'}}</span>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="ten wide column">
+        <div class="ui stacked segment">
+          {{{story.body}}}
+        </div>
+      </div>
+      <div class="six wide column">
+        <div class="ui card">
+          <div class="blurring dimmable image">
+            <div class="ui dimmer">
+              <div class="ui content">
+                <div class="center">
+                  <a class="ui inverted button" href="/stories/user/{{story.user.id}}">More Stories</a>
+                </div>
+              </div>
+            </div>
+            <img src="{{story.user.image}}">
+          </div>
+        <div class="content">
+        <a class="header">{{story.user.firstName}}</a>
+          <div class="meta">
+            <span class="date">{{story.user.lastName}}</span>
+          </div>
+        </div>
+      <div class="extra content">
+        <a href="/stories/user/{{story.user.id}}">
+          <i class="users icon"></i>
+          More Stories
+        </a>
+      </div>
+    </div>
+    </div>
+    </div>

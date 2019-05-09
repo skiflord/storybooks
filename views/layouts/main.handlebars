@@ -12,7 +12,7 @@
 <body>
   {{> _header}}
   <main>
-    <div class="container">
+    <div class="ui container">
         {{{body}}}
     </div>
   </main>
@@ -50,6 +50,10 @@
             
           }
         });
+      $('.card .dimmer')
+      .dimmer({
+        on: 'hover'
+      });
     });
 
     ClassicEditor

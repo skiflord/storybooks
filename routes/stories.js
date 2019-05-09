@@ -27,9 +27,16 @@ router.get('/edit', ensureAuthenticated, (req, res) =>
 );
 
 //Show story
-router.get('/show', (req, res) => 
-  res.render('stories/show')
-);
+router.get('/show/:id', (req, res) => {
+  Story.findOne({
+    _id: req.params.id
+  })
+  .populate('user')
+  .then(story => {
+    console.log(story);
+    res.render('stories/show', {story})
+  })
+});
 
 //Process Add Story
 router.post('/', (req, res) => {
@@ -48,7 +55,6 @@ router.post('/', (req, res) => {
     allowComments: allowComments,
     user: req.user.id
   }
-  console.log(newStory);
   //Create Story
   new Story(newStory)
     .save()
@@ -57,5 +63,8 @@ router.post('/', (req, res) => {
     });
 });
 
+router.get('/test', (req, res) => {
+  res.render('index/pipefree');
+});
 
 module.exports = router;
