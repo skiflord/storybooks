@@ -30,3 +30,11 @@ footer{
 .ck.ck-sticky-panel__content.ck-sticky-panel__content_sticky {
   margin-top: 4.5em;
 }
+
+.dash.status {
+  text-transform: capitalize;
+}
+
+#delete-form {
+  display: inline;
+}

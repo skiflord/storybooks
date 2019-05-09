@@ -1,0 +1,39 @@
+<div class="story container">
+  <a class="ui image label">
+    <img src="{{user.image}}">
+    Your Stories {{user.firstName}} {{user.lastName}}
+  </a>
+  {{#if stories}}
+    <table class="ui celled striped table">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Date</th>
+          <th colspan="2">Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each stories}}
+          <tr>
+            <td><a href="/stories/show/{{id}}">{{title}}</a></td>
+            <td>{{formateDate date 'MMMM do YYYY'}}</td>
+            <td class="dash status">{{status}}</td>
+            <td>
+              <form action="/stories/{{id}}" method="POST" id="delete-form">
+                <button type="submit" class="ui compact red button right floated">
+                  Delete
+                </button>
+              </form>
+
+              <a class="ui compact brown button right floated" href="/stories/edit/{{id}}">
+                Edit
+              </a>
+            </td>
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  {{else}}
+    <p>You have not created any stories</p>
+  {{/if}}  
+</div>

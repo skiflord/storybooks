@@ -63,8 +63,5 @@ router.post('/', (req, res) => {
     });
 });
 
-router.get('/test', (req, res) => {
-  res.render('index/pipefree');
-});
 
 module.exports = router;
