@@ -8,7 +8,7 @@ const session = require('express-session');
 const passport = require('passport');
 const methodOverride = require('method-override');
 
-mongoose.set('debug', true);
+//mongoose.set('debug', true);
 
 //Load Models
 require('./models/User');
