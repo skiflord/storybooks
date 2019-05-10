@@ -11,12 +11,11 @@
         </div>
       </div>
       <div class="extra content">
-        <div  class="left floated ui icon button">
-          <i class="pencil alternate icon "></i>
-        </div>
+      <div href="/stories/user/{{story.user.id}}">  
         <div class="right floated author">
-          <img src={{user.image}} class="ui avatar image"> {{user.firstName}} {{user.lastName}}
+          <img src={{user.image}} class="ui avatar image">{{user.firstName}} {{user.lastName}}
         </div>
+      </div>  
       </div>
     </a>
   {{else}}

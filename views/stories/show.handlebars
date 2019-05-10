@@ -42,4 +42,46 @@
       </div>
     </div>
     </div>
+    {{#if story.allowComments}}
+    <div class="row">
+      <div class="sixteen wide column">
+        <div class="ui comments" style="margin: 1em">
+          <h3 class="ui dividing header">Comments</h3>
+          {{#each story.comments}}
+          <div class="comment">
+            <a class="avatar">
+              <img src="{{commentUser.image}}">
+            </a>
+            <div class="content">
+              <a class="author">{{commentUser.firstName}} {{commentUser.lastName}}</a>
+              <div class="metadata">
+                <span class="date">{{formateDate commentDate 'MMMM Do YYYY'}}</span>
+              </div>
+              <div class="text">
+                {{commentBody}}
+              </div>
+              <div class="actions">
+                <a class="reply">Reply</a>
+              </div>
+            </div>
+          </div>
+          {{/each}}
+          {{#if user}}
+          <form class="ui reply form" action="/stories/comments/{{story.id}}" method="POST">
+            <div class="ui action input">
+              <input type="text" name="commentBody">
+              <button type="submit" class="ui teal button">
+                Send
+              </button>
+            </div>
+          </form>
+          {{else}}
+          <div class="ui message" >
+            <span class="header">Please <a href="/auth/google">login</a> to leave a comment</span>
+          </div>
+          {{/if}}
+        <div>
+      </div>
     </div>
+    {{/if}}
+  </div>
