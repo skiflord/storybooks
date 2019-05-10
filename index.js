@@ -77,7 +77,7 @@ app.use('/auth', auth);
 app.use('/stories', stories);
 
 //Load Keys
-const keys = require('./config/keys_dev');
+const keys = require('./config/keys');
 
 //Mongoose Connect
 mongoose.connect(keys.mongoURI, 
